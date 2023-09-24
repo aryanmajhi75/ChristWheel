@@ -1,4 +1,5 @@
 import 'package:christwheel/app_theme.dart';
+import 'package:christwheel/components/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: ,
+      home: const Bottomnavigation(),
     );
   }
 }
