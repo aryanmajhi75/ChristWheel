@@ -5,6 +5,7 @@ const Color secondaryL = Color(0xff0466C9);
 const Color accentGray = Color(0xff757F8C);
 const Color accentBlack = Color(0xff3B414B);
 const Color success = Color(0xff4BD37B);
+const double defPadding = 20;
 
 class AppTheme {
   static ThemeData get lightTheme {
