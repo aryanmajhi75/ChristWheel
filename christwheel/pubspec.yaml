@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   curved_navigation_bar: 
+  material_design_icons_flutter: 
 
 dev_dependencies:
   flutter_test:

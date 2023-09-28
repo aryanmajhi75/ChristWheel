@@ -25,6 +25,7 @@ class _UserhistoryState extends State<Userhistory> {
         child: Padding(
           padding: const EdgeInsets.all(defPadding),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "History",
@@ -44,7 +45,7 @@ class _UserhistoryState extends State<Userhistory> {
                       subtitle: const Text("Status In"),
                       leading: const Text("08:45 am"),
                       trailing: const Icon(
-                        Icons.done_all_rounded,
+                        Icons.verified_rounded,
                         color: success,
                       ),
                       title: Text("Parking Area : $index"),

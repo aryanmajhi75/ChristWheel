@@ -10,6 +10,7 @@ const double defPadding = 20;
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
+      // useMaterial3: true,
       appBarTheme: const AppBarTheme(
         backgroundColor: primaryL,
         elevation: 0,
@@ -64,6 +65,17 @@ class AppTheme {
           iconSize: MaterialStatePropertyAll(30),
           // overlayColor: MaterialStatePropertyAll(spotifyGreen),
           alignment: Alignment.center,
+        ),
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        foregroundColor: primaryL,
+        elevation: 5,
+        backgroundColor: secondaryL,
+        iconSize: 30,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
         ),
       ),
     );

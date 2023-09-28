@@ -1,4 +1,5 @@
 import 'package:christwheel/app_theme.dart';
+import 'package:christwheel/components/add_vehicle.dart';
 import 'package:flutter/material.dart';
 
 class Userprofile extends StatefulWidget {
@@ -9,12 +10,12 @@ class Userprofile extends StatefulWidget {
 }
 
 class _UserprofileState extends State<Userprofile> {
-  bool _isParked = true;
+  final bool _isParked = false;
 
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
-    final deviceWidth = MediaQuery.of(context).size.width;
+    // final deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
@@ -72,9 +73,38 @@ class _UserprofileState extends State<Userprofile> {
               SizedBox(
                 height: deviceHeight * 0.02,
               ),
-              Text(
-                "Vehicle Details",
-                style: Theme.of(context).textTheme.headlineLarge,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Vehicle Details",
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
+                  FloatingActionButton.extended(
+                    label: const Text("Add"),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const Addvehicle();
+                          });
+                    },
+                    // style: const ButtonStyle(
+                    //   elevation: MaterialStatePropertyAll(5),
+                    //   fixedSize: MaterialStatePropertyAll(
+                    //     Size(5, 5),
+                    //   ),
+                    //   shape: MaterialStatePropertyAll(
+                    //     CircleBorder(
+                    //       side: BorderSide(
+                    //         color: Colors.transparent,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    icon: const Icon(Icons.add),
+                  ),
+                ],
               ),
               SizedBox(
                 height: deviceHeight * 0.02,
