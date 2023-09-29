@@ -5,7 +5,9 @@ const Color secondaryL = Color(0xff0466C9);
 const Color accentGray = Color(0xff757F8C);
 const Color accentBlack = Color(0xff3B414B);
 const Color success = Color(0xff4BD37B);
+const Color error = Color(0xD1FF0000);
 const double defPadding = 20;
+const double defElevation = 10;
 
 class AppTheme {
   static ThemeData get lightTheme {
@@ -48,7 +50,7 @@ class AppTheme {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: secondaryL,
         selectedItemColor: primaryL,
-        elevation: 5,
+        elevation: defElevation,
         selectedIconTheme: IconThemeData(
           size: 32,
         ),
@@ -67,9 +69,24 @@ class AppTheme {
           alignment: Alignment.center,
         ),
       ),
+      inputDecorationTheme: const InputDecorationTheme(
+        floatingLabelStyle: TextStyle(
+          color: accentGray,
+          fontSize: 14,
+        ),
+        labelStyle: TextStyle(
+          color: accentGray,
+          fontSize: 14,
+        ),
+        iconColor: accentGray,
+        errorStyle: TextStyle(
+          color: error,
+          fontSize: 14,
+        ),
+      ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: primaryL,
-        elevation: 5,
+        elevation: defElevation,
         backgroundColor: secondaryL,
         iconSize: 30,
         shape: RoundedRectangleBorder(

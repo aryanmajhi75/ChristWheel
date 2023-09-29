@@ -38,28 +38,25 @@ class _UserprofileState extends State<Userprofile> {
                 height: deviceHeight * 0.02,
               ),
               Card(
+                // color: secondaryL,
                 elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(defPadding),
+                child: const Padding(
+                  padding: EdgeInsets.all(defPadding),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CircleAvatar(
                         backgroundColor: accentGray,
-                        maxRadius: 40,
-                        minRadius: 40,
-                        child: Image.asset(
+                        radius: 40,
+                        backgroundImage: AssetImage(
                           "images/profile.jpg",
-                          // height: 90,
-                          isAntiAlias: true,
                         ),
                       ),
-                      const Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text("Aryan Majhi"),
                           Text("2347107"),

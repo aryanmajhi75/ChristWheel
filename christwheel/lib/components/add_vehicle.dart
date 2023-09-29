@@ -1,6 +1,5 @@
 import 'package:christwheel/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Addvehicle extends StatefulWidget {
   const Addvehicle({super.key});
@@ -13,32 +12,60 @@ class _AddvehicleState extends State<Addvehicle> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      elevation: defElevation,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
       actions: [
-        ElevatedButton(
-          child: const Text("submit"),
-          onPressed: () {},
+        Align(
+          alignment: Alignment.center,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              fixedSize: const MaterialStatePropertyAll(
+                Size(130, 50),
+              ),
+              shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            child: const Text("Submit"),
+            onPressed: () {},
+          ),
         ),
       ],
       scrollable: true,
-      title: const Text("Add Vehicle"),
+      actionsPadding: const EdgeInsets.only(bottom: 20),
+      title: Text(
+        "Add Vehicle",
+        style: Theme.of(context).textTheme.headlineLarge,
+      ),
       content: Padding(
         padding: const EdgeInsets.all(defPadding),
         child: Form(
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Vehicle Reg Number",
-                  icon: Icon(MdiIcons.car),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Vehicle Reg Number",
+                    icon: Icon(Icons.directions_car_rounded),
+                  ),
                 ),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: "Type of Vehicle",
-                  icon: Icon(Icons.email),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Type of Vehicle",
+                    icon: Icon(
+                      Icons.category_rounded,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
