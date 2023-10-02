@@ -1,14 +1,14 @@
 import 'package:christwheel/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class Userhistory extends StatefulWidget {
-  const Userhistory({super.key});
+class Usernotification extends StatefulWidget {
+  const Usernotification({super.key});
 
   @override
-  State<Userhistory> createState() => _UserhistoryState();
+  State<Usernotification> createState() => _UsernotificationState();
 }
 
-class _UserhistoryState extends State<Userhistory> {
+class _UsernotificationState extends State<Usernotification> {
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
@@ -28,7 +28,7 @@ class _UserhistoryState extends State<Userhistory> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "My History",
+                "My Notifications",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               SizedBox(
@@ -36,11 +36,12 @@ class _UserhistoryState extends State<Userhistory> {
               ),
               Expanded(
                 child: SizedBox(
+                  // height: deviceHeight * 0.65,
+                  // width: deviceWidth,
                   child: ListView.builder(
-                    itemCount: 15,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return Card(
-                        elevation: defElevation,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                           side: const BorderSide(
@@ -48,44 +49,34 @@ class _UserhistoryState extends State<Userhistory> {
                             width: 1,
                           ),
                         ),
+                        elevation: 5,
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                            top: defPadding,
-                            bottom: defPadding,
-                          ),
+                          padding: const EdgeInsets.all(defPadding),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              // const Text("Status In"),
-                              const Row(
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.arrow_downward_rounded,
-                                    color: success,
+                                  Text(
+                                    "Some Notification",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium,
                                   ),
-                                  Text("08:45 am"),
+                                  SizedBox(
+                                    height: deviceHeight * 0.01,
+                                  ),
+                                  const Text(
+                                    "By: Guard ",
+                                  ),
+                                  SizedBox(
+                                    height: deviceHeight * 0.01,
+                                  ),
+                                  const Text(
+                                    "10:03 am",
+                                  ),
                                 ],
                               ),
-                              const Row(
-                                children: [
-                                  Icon(
-                                    Icons.arrow_upward_rounded,
-                                    color: error,
-                                  ),
-                                  Text("12:50 pm"),
-                                ],
-                              ),
-                              Text("Parking Area : $index"),
-                              if (index != 0)
-                                const Icon(
-                                  Icons.verified_rounded,
-                                  color: accentGray,
-                                )
-                              else
-                                const Icon(
-                                  Icons.verified_rounded,
-                                  color: success,
-                                ),
                             ],
                           ),
                         ),

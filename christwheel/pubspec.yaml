@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  curved_navigation_bar: 
+  curved_labeled_navigation_bar: 
   material_design_icons_flutter: 
 
 dev_dependencies:
